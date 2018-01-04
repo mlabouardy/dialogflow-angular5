@@ -2,6 +2,10 @@
 
 ChatBot with Angular 5 & DialogFlow [demo](http://smartbot-mlabouardy.s3-website-us-east-1.amazonaws.com)
 
+<p align="center">
+  <img src="screenshot.gif" width="70%"/>
+</p>
+
 ## Run
 
 ```
@@ -12,4 +16,4 @@ ng serve
 
 ## Further help
 
-[Tutorial](http://www.blog.labouardy.com/serverless-chatbot-angular-5-dialogflow-aws-lambda/).
+[Chatbot with Angular 5 & DialogFlow](http://www.blog.labouardy.com/serverless-chatbot-angular-5-dialogflow-aws-lambda/)
