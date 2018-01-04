@@ -7,7 +7,7 @@ import { environment } from '@env/environment';
 @Injectable()
 export class DialogflowService {
 
-  private baseURL: string = "https://api.dialogflow.com/v1/query";
+  private baseURL: string = "https://api.dialogflow.com/v1/query?v=20150910";
   private token: string = environment.token;
 
   constructor(private http: Http){}
