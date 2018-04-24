@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '@app/models';
-import { DialogflowService } from '@app/services';
+import {Message} from '../../models';
+import {DialogflowService} from '../../services';
+import {forEach} from '@angular/router/src/utils/collection';
+
 
 @Component({
   selector: 'message-form',
@@ -10,10 +12,10 @@ import { DialogflowService } from '@app/services';
 export class MessageFormComponent implements OnInit {
 
   @Input('message')
-  private message : Message;
+  private message: Message;
 
   @Input('messages')
-  private messages : Message[];
+  private messages: Message[];
 
   constructor(private dialogFlowService: DialogflowService) { }
 
@@ -25,9 +27,18 @@ export class MessageFormComponent implements OnInit {
     this.messages.push(this.message);
 
     this.dialogFlowService.getResponse(this.message.content).subscribe(res => {
+      console.log(res);
       this.messages.push(
-        new Message(res.result.fulfillment.speech, 'assets/images/bot.png', res.timestamp)
+       new Message(res.result.fulfillment.speech, 'assets/images/bot.png', res.timestamp)
       );
+      const fulfillment = res.result.fulfillment.messages;
+      console.log(res);
+      fulfillment.forEach(item => {
+        this.messages.push(
+        new Message(item, 'assets/images/bot.png', res.timestamp)
+        );
+      });
+      console.log(fulfillment);
     });
 
     this.message = new Message('', 'assets/images/user.png');

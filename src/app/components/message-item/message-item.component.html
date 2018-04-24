@@ -1,8 +1,21 @@
 <li class="list-group-item">
   <img [src]="message.avatar" class="avatar"/>
-  <div class="message">
+  <div class="message" *ngIf="type=='simple'">
     {{message.content}}
   </div>
+
+  <div class="message" *ngIf="type=='basic_card'">
+    <p-card styleClass="ui-card-shadow">
+      <p-header>
+        {{content.title}}
+      </p-header>
+      Body Content
+      <p-footer>
+        Footer content here
+      </p-footer>
+    </p-card>
+  </div>
+
   <div class="timeform">
     <i class="fa fa-clock-o" aria-hidden="true"></i> <span class="timestamp">at {{message.timestamp | date : 'dd/MM/yyyy' }}</span>
   </div>

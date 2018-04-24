@@ -4,7 +4,10 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DialogflowService } from '@app/services';
-import { MessageListComponent, MessageFormComponent, MessageItemComponent } from '@app/components'
+import { MessageListComponent, MessageFormComponent, MessageItemComponent } from '@app/components';
+import { DynamicModule } from 'ng-dynamic-component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,12 @@ import { MessageListComponent, MessageFormComponent, MessageItemComponent } from
     MessageItemComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    CardModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    DynamicModule.withComponents([MessageItemComponent, MessageFormComponent])
   ],
   providers: [
     DialogflowService
