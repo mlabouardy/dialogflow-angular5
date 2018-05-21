@@ -11,7 +11,8 @@ export class MessageItemComponent implements OnInit {
 
   @Input('message')
   private message: Message;
-  private content: any;
+  private title: any;
+  private fulfillment: any;
   private type: string;
 
   constructor() {
@@ -19,14 +20,9 @@ export class MessageItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.message.content.type) {
-      this.type = this.message.content.type;
-      this.content = this.message.content;
-    } else {
-      this.type = 'simple';
-    }
-    console.log(this.type);
-
+  this.fulfillment = this.message.fulfillment[0].payload.dkepr;
+  console.log(this.fulfillment);
   }
 
 }
+

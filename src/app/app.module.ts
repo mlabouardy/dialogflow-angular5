@@ -8,6 +8,7 @@ import { MessageListComponent, MessageFormComponent, MessageItemComponent } from
 import { DynamicModule } from 'ng-dynamic-component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CardModule} from 'primeng/card';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {CardModule} from 'primeng/card';
   imports: [
     BrowserAnimationsModule,
     CardModule,
+    TableModule,
     BrowserModule,
     FormsModule,
     HttpModule,

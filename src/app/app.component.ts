@@ -12,9 +12,9 @@ export class AppComponent {
   public messages: Message[];
 
   constructor() {
-    this.message = new Message('', 'assets/images/user.png');
+    this.message = new Message('', 'assets/images/user.png', null);
     this.messages = [
-      new Message('Welcome to chatbot universe', 'assets/images/bot.png', new Date())
+      new Message('Welcome to chatbot universe', 'assets/images/bot.png', null, new Date())
     ];
   }
 }
