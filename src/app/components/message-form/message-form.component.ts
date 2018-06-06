@@ -23,13 +23,14 @@ export class MessageFormComponent implements OnInit {
   }
 
   public sendMessage(): void {
+    console.log(this.message.content);
     this.message.timestamp = new Date();
     this.messages.push(this.message);
 
     this.dialogFlowService.getResponse(this.message.content).subscribe(res => {
       console.log(res);
       this.messages.push(
-       new Message(res.result.fulfillment.speech, 'assets/images/bot.png', res.result.fulfillment.messages,  res.timestamp)
+       new Message("", 'assets/images/JKU.png', res.result.fulfillment.messages,  res.timestamp)
       );
     });
 

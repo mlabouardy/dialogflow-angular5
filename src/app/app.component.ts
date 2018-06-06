@@ -14,7 +14,7 @@ export class AppComponent {
   constructor() {
     this.message = new Message('', 'assets/images/user.png', null);
     this.messages = [
-      new Message('Welcome to chatbot universe', 'assets/images/bot.png', null, new Date())
+      new Message('Willkommen beim JKU-Chatbot. Du kannst mich alles über Professoren, Kurse und dein Curriculum fragen.', 'assets/images/JKU.png', null, new Date())
     ];
   }
 }
