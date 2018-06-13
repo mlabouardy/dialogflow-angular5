@@ -20,9 +20,9 @@ export class MessageItemComponent implements OnInit {
   }
 
   ngOnInit() {
-  this.fulfillment = this.message.fulfillment[0].payload.dkepr;
-  console.log(this.fulfillment);
+    if(this.message.fulfillment[0].payload.dkepr != null)
+      this.fulfillment = this.message.fulfillment[0].payload.dkepr;
+  // console.log(this.fulfillment);
   }
 
 }
-
