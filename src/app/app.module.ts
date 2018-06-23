@@ -9,6 +9,12 @@ import { DynamicModule } from 'ng-dynamic-component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CardModule} from 'primeng/card';
 import {TableModule} from 'primeng/table';
+import { AppConfig } from './app.config';
+import { APP_INITIALIZER } from '@angular/core';
+
+export function initializeApp(appConfig: AppConfig) {
+  return () => appConfig.load();
+}
 
 @NgModule({
   declarations: [
@@ -27,7 +33,11 @@ import {TableModule} from 'primeng/table';
     DynamicModule.withComponents([MessageItemComponent, MessageFormComponent])
   ],
   providers: [
-    DialogflowService
+    DialogflowService,
+    AppConfig,
+       { provide: APP_INITIALIZER,
+         useFactory: initializeApp,
+         deps: [AppConfig], multi: true }
   ],
   bootstrap: [AppComponent]
 })
