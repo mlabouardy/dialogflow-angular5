@@ -10,7 +10,7 @@ import { MessageItemComponent } from '@app/components/message-item/message-item.
 export class MessageListComponent implements OnInit, AfterViewInit {
 
   @Input('messages')
-  private messages: Message[];
+  messages: Message[];
 
   @ViewChild('chatlist', { read: ElementRef }) chatList: ElementRef;
   @ViewChildren(MessageItemComponent, { read: ElementRef }) chatItems: QueryList<MessageItemComponent>;

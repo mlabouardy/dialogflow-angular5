@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  token: ''
+  name: 'deploy',
+  production: true
 };
